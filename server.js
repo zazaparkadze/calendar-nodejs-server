@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
-const path = require('path');
 const verifyJWT = require('./middleware/verifyJWT');
 const cookieParser = require('cookie-parser');
 const credentials = require('./middleware/credentials');
@@ -25,7 +24,7 @@ app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/refresh', require('./routes/refresh'));
 app.use('/logout', require('./routes/logout'));
-//app.use(verifyJWT);
+app.use(verifyJWT);
 app.use('/schedule', require('./routes/api/schedules'));
 app.use('/employee', require('./routes/api/employees'));
 
