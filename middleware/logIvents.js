@@ -18,7 +18,7 @@ const logEvents = (message, eventName) => {
         msg,
         'utf-8',
         (err) => {
-            if (err) throw error;
+            if (err) throw new Error('Why???');
         }
     );
 };
