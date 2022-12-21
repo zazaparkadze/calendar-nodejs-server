@@ -21,4 +21,8 @@ const createEmployee = async (req, res) => {
     res.json(result);
 };
 
-module.exports = { getAllEmployees, createEmployee };
+const deleteEmployee = async (req, res) => {
+    console.log('employee deleted');
+};
+
+module.exports = { getAllEmployees, createEmployee, deleteEmployee };

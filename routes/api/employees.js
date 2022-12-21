@@ -7,6 +7,7 @@ const verifyROLES = require('../../middleware/verifyROLES');
 router
     .route('/')
     .get(employeeController.getAllEmployees)
+    .delete(verifyROLES(ROLES_LIST.Admin), employeeController.deleteEmployee)
     .post(verifyROLES(ROLES_LIST.Admin), employeeController.createEmployee);
 
 module.exports = router;
